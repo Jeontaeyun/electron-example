@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { makeStyles, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { Router, Route, Switch } from "react-router";
 import history from "service/history";
 import { indexRoutes } from "route";
@@ -9,12 +9,19 @@ import Sidebar from "component/Sidebar";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "100vh"
+    height: "100vh",
+    width: "100vw"
   },
   drawer: {
-    backgroundColor: "#350C35",
+    width: 280,
+    minWidth: 280,
     height: "100%",
-    minWidth: 280
+    backgroundColor: "#350C35"
+  },
+  main: {
+    width: 800,
+    height: "100%",
+    backgroundColor: "red"
   }
 }));
 
@@ -25,20 +32,13 @@ const App: React.FC = () => {
       <Switch>
         {indexRoutes.map((item, key) => {
           return (
-            <Route path={item.route} exact={item.exact}>
-              <Grid container className={classes.root}>
-                <Grid
-                  item
-                  xs={2}
-                  zeroMinWidth={true}
-                  className={classes.drawer}
-                >
+            <Route path={item.route} key={item.route} exact={item.exact}>
+              <div className={classes.root}>
+                <div className={classes.drawer}>
                   <Sidebar />
-                </Grid>
-                <Grid item xs={10}>
-                  {item.component}
-                </Grid>
-              </Grid>
+                </div>
+                <div className={classes.main}>{item.component}</div>
+              </div>
             </Route>
           );
         })}

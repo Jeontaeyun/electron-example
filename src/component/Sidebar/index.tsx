@@ -4,23 +4,14 @@ import { makeStyles } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
+
 import BottomArrow from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import PlusIcon from "@material-ui/icons/ControlPoint";
 import history from "service/history";
 import { indexRoutes } from "route";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    height: "100vh"
-  },
-  drawer: {
-    backgroundColor: "#350C35",
-    height: "100%"
-  },
   whiteText: {
     color: "#FFFFFF"
   },
@@ -60,12 +51,12 @@ const Sidebar: React.FC = props => {
             <React.Fragment>
               <Grid container alignItems="center">
                 <Typography variant="h6" className={classes.whiteText}>
-                  FiveMinutesDev
+                  TAEYUNTRON
                 </Typography>
                 <BottomArrow className={classes.whiteIcon} />
               </Grid>
               <Typography variant="body2" className={classes.whiteText}>
-                CEO 최지호
+                CTO 전태윤
               </Typography>
             </React.Fragment>
           }
