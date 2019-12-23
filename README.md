@@ -24,4 +24,6 @@ For start electron project. we need this kind of package.
     $yarn electron-pack     # build project with electron-builder
 ```
 
-## 04. Project Conclusion
+## 04. Project Theory
+
+## 05. Project Conclusion
